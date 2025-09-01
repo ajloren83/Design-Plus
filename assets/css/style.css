@@ -55,11 +55,11 @@ body {
 .hero-video-section {
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 7.16rem); /* Subtract top bar (2.5rem) + navbar (3rem) heights */
+  min-height: calc(100vh - 7.16rem);
 }
 
 .hero-section-container {
-  min-height: calc(100vh - 7.16rem); /* Subtract top bar (2.5rem) + navbar (3rem) heights */
+  min-height: calc(100vh - 7.16rem);
 }
 
 .hero-bg-video {
@@ -334,4 +334,220 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
 
 .tag-btn:hover .arrow-icon {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Features Section */
+.features-section {
+  padding: 2.5rem 0;
+  background-color: var(--clr-neutral-0);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--clr-neutral-0);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.feature-icon {
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-img {
+  max-width: 100%;
+}
+
+.feature-title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.625rem;
+}
+
+.feature-description {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.25rem;
+  }
+  
+  .features-section {
+    padding: 2rem 0;
+  }
+}
+
+/* Start Smart Section */
+.start-smart-section {
+  background-color: var(--clr-cream-300);
+  padding: 3.75rem 0;
+  margin: 0 1.25rem;
+  border-radius: 1.125rem;
+}
+
+.start-smart-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.start-smart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.start-smart-card {
+  background-color: var(--clr-neutral-0);
+  border-radius: 1rem;
+  padding: 1.125rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-image {
+  margin-bottom: 0.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 236px;
+  min-height: 236px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.card-title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.625rem;
+  text-align: left;
+}
+
+.card-description {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+
+
+/* Responsive adjustments for Start Smart section */
+@media (max-width: 768px) {
+  .start-smart-section {
+    padding: 2.5rem 0;
+    border-radius: 0.75rem;
+  }
+  
+  .start-smart-title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .start-smart-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .start-smart-card {
+    padding: 1rem;
+  }
+  
+  .card-img {
+    height: 12rem;
+    min-height: 12rem;
+  }
+  
+  .card-title,
+  .card-description {
+    text-align: center;
+  }
+}
+
+/* Design Inspiration Section */
+.design-inspiration-section {
+  padding: 3.75rem 0;
+}
+
+.inspiration-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.inspiration-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0;
+}
+
+.inspiration-description {
+  font-size: var(--fs-subtitle);
+  color: var(--clr-neutral-600);
+  margin-top: 0;
+}
+
+/* Masonry Grid Layout */
+.inspiration-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 10px; /* Each row is 10px high, spans will be calculated */
+  grid-auto-flow: dense;
+  gap: 0.75rem;
+}
+
+.gallery-item {
+  display: block;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile: fixed height */
+@media (max-width: 768px) {
+  .inspiration-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: unset;
+  }
+
+  .gallery-img {
+    height: 200px;
+    object-fit: cover;
+  }
 }
