@@ -36,25 +36,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function resizeMasonryGrid() {
-  const grid = document.querySelector('.inspiration-gallery');
-  const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-  const gap = parseInt(window.getComputedStyle(grid).getPropertyValue('gap'));
-
-  grid.querySelectorAll('.gallery-item').forEach(item => {
-    const img = item.querySelector('img');
-    if (img.complete) {
-      const rowSpan = Math.ceil((img.offsetHeight + gap) / (rowHeight + gap));
-      item.style.gridRowEnd = `span ${rowSpan}`;
-    } else {
-      img.addEventListener('load', () => {
-        const rowSpan = Math.ceil((img.offsetHeight + gap) / (rowHeight + gap));
-        item.style.gridRowEnd = `span ${rowSpan}`;
-      });
-    }
-  });
-}
-
-window.addEventListener('load', resizeMasonryGrid);
-window.addEventListener('resize', resizeMasonryGrid);
-
