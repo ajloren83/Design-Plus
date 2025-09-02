@@ -33,6 +33,30 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // Init Swiper for Reviews
+  if (window.Swiper) {
+    new Swiper('.reviews-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 600,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        768: { spaceBetween: 24 },
+        992: { slidesPerView: 1.7, spaceBetween: 24 },
+      },
+      navigation: false,
+      pagination: {
+        el: null,
+      },
+    });
+  }
 });
+
+
 
 
