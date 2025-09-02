@@ -737,7 +737,7 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
 /* Mobile */
 @media (max-width: 768px) {
   .reviews-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .google-review-link { display: inline-flex; flex-wrap: wrap; align-items: center; }
+  .google-review-link { display: inline-flex; flex-wrap: wrap; align-items: center; padding: 0;}
   .google-review-link .google-icon { order: 0; }
   .google-review-link .google-text { order: 1; }
   .google-review-link::after { content: ""; flex-basis: 100%; order: 2; }
@@ -750,4 +750,22 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
   .review-card { grid-template-columns: 1fr; }
   .project-image-wrap { width: 100%; height: 236px; }
   .project-image { width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* Mobile typography scale */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 2.5rem; /* 40px */
+    --fs-h2: 2.25rem; /* 36px */
+    --fs-h3: 1.75rem; /* 28px */
+    --fs-h4: 1.25rem; /* 20px */
+    --fs-h5: 0.9375rem; /* 15px */
+    --fs-h6: 0.8125rem; /* 13px */
+    --fs-button: 0.9375rem; /* 15px */
+    --fs-link-1: 0.9375rem; /* 15px */
+    --fs-link-2: 0.8125rem; /* 13px */
+    --fs-body-1: 0.9375rem; /* 15px */
+    --fs-body-2: 0.8125rem; /* 13px */
+    --fs-subtitle: 1.25rem; /* 20px */
+  }
 }
