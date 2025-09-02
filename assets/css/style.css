@@ -487,10 +487,6 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
     min-height: 12rem;
   }
   
-  .card-title,
-  .card-description {
-    text-align: center;
-  }
 }
 
 /* Design Inspiration Section */
