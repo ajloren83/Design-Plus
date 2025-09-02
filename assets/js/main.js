@@ -34,6 +34,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Lazy-load CSS background images via data-bg
+  const lazyBgEls = document.querySelectorAll('[data-bg]');
+  if (lazyBgEls.length) {
+    const loadBg = el => {
+      const url = el.getAttribute('data-bg');
+      if (!url) return;
+      const current = getComputedStyle(el).backgroundImage;
+      const sep = current && current !== 'none' ? ', ' : '';
+      el.style.backgroundImage = `${current}${sep}url('${url}')`;
+      el.removeAttribute('data-bg');
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadBg(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px 0px' });
+
+      lazyBgEls.forEach(el => io.observe(el));
+    } else {
+      // Fallback: load immediately
+      lazyBgEls.forEach(loadBg);
+    }
+  }
+
   // Init Swiper for Reviews
   if (window.Swiper) {
     new Swiper('.reviews-swiper', {

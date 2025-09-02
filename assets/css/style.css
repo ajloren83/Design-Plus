@@ -593,7 +593,7 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
 /* Smart Budgeting Section */
 
 .budget-cta-container {
-  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url('/assets/images/smart-budgeting-first.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
