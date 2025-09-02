@@ -40,6 +40,25 @@
   --bs-gutter-x: 1.5rem;
 }
 
+/* Mobile typography scale */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 2.5rem; /* 40px */
+    --fs-h2: 2.25rem; /* 36px */
+    --fs-h3: 1.75rem; /* 28px */
+    --fs-h4: 1.25rem; /* 20px */
+    --fs-h5: 0.9375rem; /* 15px */
+    --fs-h6: 0.8125rem; /* 13px */
+    --fs-button: 0.9375rem; /* 15px */
+    --fs-link-1: 0.9375rem; /* 15px */
+    --fs-link-2: 0.8125rem; /* 13px */
+    --fs-body-1: 0.9375rem; /* 15px */
+    --fs-body-2: 0.8125rem; /* 13px */
+    --fs-subtitle: 1.25rem; /* 20px */
+  }
+}
+
+
 html, body {
   scroll-behavior: smooth;
 }
@@ -752,20 +771,80 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
   .project-image { width: 100%; height: 100%; object-fit: cover; }
 }
 
-/* Mobile typography scale */
+/* Why DesignPlus Section */
+.why-designplus-section {
+  padding: 3.75rem 0; 
+  background-color: var(--clr-neutral-0);
+}
+
+.why-designplus-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.why-designplus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.why-designplus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem; 
+}
+
+.why-designplus-icon-container {
+  background-color: var(--clr-cream-300);
+  border-radius: 0.75rem; 
+  padding: 0.75rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-designplus-content {
+  flex: 1;
+}
+
+.why-designplus-card-title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.5rem;
+}
+
+.why-designplus-description {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mobile responsive - show down by down */
 @media (max-width: 768px) {
-  :root {
-    --fs-h1: 2.5rem; /* 40px */
-    --fs-h2: 2.25rem; /* 36px */
-    --fs-h3: 1.75rem; /* 28px */
-    --fs-h4: 1.25rem; /* 20px */
-    --fs-h5: 0.9375rem; /* 15px */
-    --fs-h6: 0.8125rem; /* 13px */
-    --fs-button: 0.9375rem; /* 15px */
-    --fs-link-1: 0.9375rem; /* 15px */
-    --fs-link-2: 0.8125rem; /* 13px */
-    --fs-body-1: 0.9375rem; /* 15px */
-    --fs-body-2: 0.8125rem; /* 13px */
-    --fs-subtitle: 1.25rem; /* 20px */
+  
+  .why-designplus-title {
+    text-align: center;
+  }
+
+  .why-designplus-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  
+  .why-designplus-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .why-designplus-icon-container {
+    align-self: center;
   }
 }
+
