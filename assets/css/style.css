@@ -627,12 +627,6 @@ p  { font-size: var(--fs-body-1); font-weight: var(--fw-regular); }
     padding: 2rem;
     height: 440px;
   }
-  .budget-cta-title {
-    font-size: var(--fs-h3);
-  }
-  .budget-cta-description {
-    font-size: var(--fs-body-1);
-  }
 }
 
 /* Reviews (Designer Spotlight) */
