@@ -83,6 +83,23 @@ document.addEventListener('DOMContentLoaded', function () {
         el: null,
       },
     });
+
+    // Init Swiper for Partners (logo slider)
+    new Swiper('.partners-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 0.75 * 16, // 12px in rem
+      speed: 5000,
+      loop: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+    });
   }
 });
 
