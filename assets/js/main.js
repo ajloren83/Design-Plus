@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Lazy-load CSS background images via data-bg
+  // Load CSS background images from data-bg
   const lazyBgEls = document.querySelectorAll('[data-bg]');
   if (lazyBgEls.length) {
     const loadBg = el => {
@@ -46,21 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
       el.removeAttribute('data-bg');
     };
 
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadBg(entry.target);
-            io.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '200px 0px' });
-
-      lazyBgEls.forEach(el => io.observe(el));
-    } else {
-      // Fallback: load immediately
-      lazyBgEls.forEach(loadBg);
-    }
+    // Eagerly load to avoid issues on some deployments where IO may not fire
+    lazyBgEls.forEach(loadBg);
   }
 
   // Init Swiper for Reviews
