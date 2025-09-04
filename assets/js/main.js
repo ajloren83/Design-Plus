@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Init Swiper for Partners (logo slider)
     new Swiper('.partners-swiper', {
       slidesPerView: 'auto',
-      spaceBetween: 0.75 * 16, // 12px in rem
+      spaceBetween: 0.75 * 16, 
       speed: 5000,
       loop: true,
       autoplay: {
