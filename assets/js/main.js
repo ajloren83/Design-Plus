@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearSpan) {
     yearSpan.textContent = String(new Date().getFullYear());
   }
+  // Auto year for footer copyright if placeholder exists
+  var footerYear = document.querySelector('[data-current-year]');
+  if (footerYear) {
+    footerYear.textContent = String(new Date().getFullYear());
+  }
 
   var faqButtons = document.querySelectorAll('[data-faq]');
   faqButtons.forEach(function (btn) {
