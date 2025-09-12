@@ -402,7 +402,7 @@ p {
 }
 
 .search-input::placeholder {
-  color: var(--clr-neutral-400);
+  color: var(--clr-neutral-600);
 }
 
 .search-input:focus {
@@ -499,11 +499,11 @@ p {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
+  
   .feature-card {
     padding: 1.25rem;
   }
-
+  
   .features-section {
     padding: 2rem 0;
   }
@@ -577,26 +577,26 @@ p {
     border-radius: 0.75rem;
     margin: 0 calc(var(--bs-gutter-x) * .5);
   }
-
+  
   .start-smart-title {
     margin-bottom: 2rem;
     text-align: center;
   }
-
+  
   .start-smart-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
+  
   .start-smart-card {
     padding: 1rem;
   }
-
+  
   .card-img {
     height: 12rem;
     min-height: 12rem;
   }
-
+  
 }
 
 /* Design Inspiration Section */
@@ -803,14 +803,14 @@ p {
   .design-inspiration-section {
     padding: 2.5rem 0;
   }
-
+  
   .inspiration-gallery {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     gap: 0.75rem;
     height: 100%;
   }
-
+  
   .gallery-item,
   .item-1,
   .item-2,
@@ -827,7 +827,7 @@ p {
     grid-column-start: auto;
     grid-row-start: auto;
   }
-
+  
   .gallery-item {
     height: 200px;
   }
@@ -845,9 +845,9 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 440px;
+  height: 440px; 
   border-radius: 1rem;
-  padding: 3.75rem;
+  padding: 3.75rem; 
   margin: 3.75rem 0;
   display: flex;
   align-items: center;
@@ -1191,19 +1191,19 @@ p {
   .why-designplus-title {
     text-align: center;
   }
-
+  
   .why-designplus-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-
+  
   .why-designplus-card {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
   }
-
+  
   .why-designplus-icon-container {
     align-self: center;
   }
@@ -1567,4 +1567,408 @@ p {
   height: 4.1875rem;
   width: auto;
   object-fit: contain;
+}
+
+/* Renovation Ideas Page Styles */
+.renovation-header {
+  padding: 2.5rem 0;
+}
+
+.renovation-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+/* Renovation Ideas Search Bar */
+.renovation-header .search-container .search-bar {
+  background: var(--clr-neutral-300);
+  box-shadow: none;
+  border: 1px solid var(--clr-neutral-400);
+}
+
+/* Categories Carousel */
+.categories-section {
+  margin: 1.25rem 0;
+}
+
+.categories-container {
+  position: relative;
+}
+
+.categories-swiper {
+  overflow: hidden;
+}
+
+.categories-swiper .swiper-slide {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.categories-prev,
+.categories-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--clr-neutral-0);
+  border: 1.5px solid var(--clr-gold-600);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--clr-gold-600);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.categories-prev:hover,
+.categories-next:hover {
+  background: var(--clr-gold-600);
+  color: var(--clr-neutral-0);
+  border-color: var(--clr-gold-600);
+}
+
+.categories-prev {
+  left: -2.25rem;
+}
+
+.categories-next {
+  right: -2.25rem;
+}
+
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+
+.category-icon {
+  width: 100%;
+  height: 120px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover .category-img {
+  transform: scale(1.05);
+}
+
+.category-item span {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+}
+
+/* Filter Section */
+.filter-section {
+  margin-bottom: 3rem;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-size: var(--fs-body-2);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+
+.filter-select {
+  border: 1px solid var(--clr-neutral-400);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: var(--fs-body-2);
+  color: var(--clr-neutral-900);
+  background: var(--clr-neutral-0);
+}
+
+.filter-select:focus {
+  border-color: var(--clr-gold-600);
+  box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
+}
+
+/* Projects Grid */
+.projects-section {
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--clr-neutral-0);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.project-image-container {
+  position: relative;
+  height: 200px;
+  background: var(--clr-neutral-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-placeholder {
+  color: var(--clr-neutral-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.project-like-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-neutral-600);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-like-btn:hover {
+  background: var(--clr-gold-600);
+  color: var(--clr-neutral-0);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: var(--fs-body-2);
+  color: var(--clr-neutral-600);
+  margin-bottom: 1rem;
+}
+
+.project-price {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--clr-gold-600);
+  margin-bottom: 0.5rem;
+}
+
+.project-designer {
+  font-size: var(--fs-body-2);
+  color: var(--clr-neutral-600);
+  margin-bottom: 0.5rem;
+}
+
+.project-tag {
+  display: inline-block;
+  background: var(--clr-gold-600);
+  color: var(--clr-neutral-0);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--fs-body-2);
+  font-weight: var(--fw-medium);
+}
+
+/* Video Tours Section */
+.video-tours-section {
+  margin-bottom: 3rem;
+}
+
+.video-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-tour-card {
+  background: var(--clr-neutral-0);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.video-tour-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.video-placeholder {
+  height: 150px;
+  background: var(--clr-neutral-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold-600);
+  position: relative;
+}
+
+.video-title {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+  padding: 1rem;
+  margin: 0;
+}
+
+/* Inspirations Section */
+.inspirations-section {
+  margin-bottom: 3rem;
+}
+
+.inspirations-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.inspirations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.inspiration-tag {
+  background: var(--clr-neutral-0);
+  border: 1px solid var(--clr-neutral-400);
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-body-2);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.inspiration-tag:hover {
+  background: var(--clr-gold-600);
+  color: var(--clr-neutral-0);
+  border-color: var(--clr-gold-600);
+}
+
+.inspiration-tag.active {
+  background: var(--clr-gold-600);
+  color: var(--clr-neutral-0);
+  border-color: var(--clr-gold-600);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .renovation-title {
+    font-size: var(--fs-h2);
+  }
+  
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .video-tours-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .inspirations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .categories-container {
+    gap: 0.75rem;
+  }
+  
+  .category-item {
+    min-width: 100px;
+  }
+  
+  .carousel-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .renovation-header {
+    padding: 1rem 0;
+  }
+  
+  .renovation-title {
+    font-size: var(--fs-h3);
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .inspirations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

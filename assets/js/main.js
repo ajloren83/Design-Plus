@@ -106,6 +106,135 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     });
   }
+
+  // Renovation Ideas Page Functionality
+  // Categories carousel functionality with Swiper
+  if (window.Swiper) {
+    const categoriesSwiper = new Swiper('.categories-swiper', {
+      slidesPerView: 6,
+      spaceBetween: 12,
+      speed: 600,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+      navigation: {
+        nextEl: '.categories-next',
+        prevEl: '.categories-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 3,
+          spaceBetween: 8,
+          navigation: {
+            enabled: false,
+          },
+        },
+        480: {
+          slidesPerView: 4,
+          spaceBetween: 12,
+          navigation: {
+            enabled: false,
+          },
+        },
+        768: {
+          slidesPerView: 5,
+          spaceBetween: 16,
+          navigation: {
+            enabled: true,
+          },
+        },
+        992: {
+          slidesPerView: 6,
+          spaceBetween: 16,
+          navigation: {
+            enabled: true,
+          },
+        },
+      },
+    });
+    
+    // Debug: Check if navigation buttons are found
+    console.log('Categories Swiper initialized:', categoriesSwiper);
+    console.log('Navigation buttons found:', {
+      prev: document.querySelector('.categories-prev'),
+      next: document.querySelector('.categories-next')
+    });
+  }
+
+  // Project like button functionality
+  const likeButtons = document.querySelectorAll('.project-like-btn');
+  likeButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const svg = this.querySelector('svg');
+      const path = svg.querySelector('path');
+      
+      // Toggle like state
+      if (path.getAttribute('fill') === 'currentColor') {
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke', 'currentColor');
+        this.style.color = 'var(--clr-neutral-600)';
+      } else {
+        path.setAttribute('fill', 'currentColor');
+        path.removeAttribute('stroke');
+        this.style.color = 'var(--clr-gold-600)';
+      }
+    });
+  });
+
+  // Inspiration tags functionality
+  const inspirationTags = document.querySelectorAll('.inspiration-tag');
+  inspirationTags.forEach(tag => {
+    tag.addEventListener('click', function() {
+      // Remove active class from all tags
+      inspirationTags.forEach(t => t.classList.remove('active'));
+      // Add active class to clicked tag
+      this.classList.add('active');
+      
+      // You can add filtering functionality here
+      console.log('Selected inspiration:', this.textContent);
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.querySelector('.search-input');
+  const searchButton = document.querySelector('.search-container .btn');
+  
+  if (searchInput && searchButton) {
+    const performSearch = () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        console.log('Searching for:', query);
+        // Add search functionality here
+      }
+    };
+    
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+  }
+
+  // Filter functionality
+  const filterSelects = document.querySelectorAll('.filter-select');
+  filterSelects.forEach(select => {
+    select.addEventListener('change', function() {
+      console.log('Filter changed:', this.previousElementSibling.textContent, this.value);
+      // Add filtering functionality here
+    });
+  });
+
+  // Mobile filter toggle
+  const filterToggle = document.querySelector('[data-bs-target="#filterCollapse"]');
+  if (filterToggle) {
+    filterToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
 });
 
 
