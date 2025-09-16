@@ -213,67 +213,164 @@
         <div class="collapse d-lg-block" id="filterCollapse">
           <div class="filter-row">
             <div class="filter-group">
-              <label class="filter-label">Home Type</label>
-              <select class="form-select filter-select">
-                <option>All Types</option>
-                <option>HDB</option>
-                <option>Condo</option>
-                <option>Landed</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="homeType">
+                  <span>Home Type</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="homeType">
+                  <a href="#" class="dropdown-item" data-value="all">All Types</a>
+                  <a href="#" class="dropdown-item" data-value="hdb">HDB</a>
+                  <a href="#" class="dropdown-item" data-value="condo">Condo</a>
+                  <a href="#" class="dropdown-item" data-value="landed">Landed</a>
+                  <a href="#" class="dropdown-item" data-value="studio">Studio Apartment</a>
+                  <a href="#" class="dropdown-item" data-value="duplex">Duplex</a>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Design Style</label>
-              <select class="form-select filter-select">
-                <option>All Styles</option>
-                <option>Modern</option>
-                <option>Minimalist</option>
-                <option>Scandinavian</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="designStyle">
+                  <span>Design Style</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="designStyle">
+                  <div class="dropdown-category">
+                    <a href="#" class="dropdown-item category-main" data-value="home-type">Home Type</a>
+                    <div class="sub-categories">
+                      <a href="#" class="dropdown-item sub-item" data-value="scandinavian">Scandinavian</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="modern-edge">Modern Edge</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="minimal-living">Minimal Living</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="contemporary">Contemporary</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="urban-industrial">Urban Industrial</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="eclectic-blend">Eclectic Blend</a>
+                    </div>
+                  </div>
+                  <div class="dropdown-category">
+                    <a href="#" class="dropdown-item category-main" data-value="classic-refined">Classic & Refined</a>
+                    <div class="sub-categories">
+                      <a href="#" class="dropdown-item sub-item" data-value="traditional-charm">Traditional Charm</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="transitional-style">Transitional Style</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="retro-revival">Retro Revival</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="vintage-touch">Vintage Touch</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="modern-luxe">Modern Luxe</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="wabi-sabi">Wabi-Sabi</a>
+                    </div>
+                  </div>
+                  <div class="dropdown-category">
+                    <a href="#" class="dropdown-item category-main" data-value="natural-lifestyle">Natural & Lifestyle</a>
+                    <div class="sub-categories">
+                      <a href="#" class="dropdown-item sub-item" data-value="japandi-calm">Japandi Calm</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="resort-style">Resort Style</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="farmhouse-warmth">Farmhouse Warmth</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="colourful-spaces">Colourful Spaces</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="moody-interiors">Moody Interiors</a>
+                      <a href="#" class="dropdown-item sub-item" data-value="unique-concepts">Unique Concepts</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Room Type</label>
-              <select class="form-select filter-select">
-                <option>All Rooms</option>
-                <option>Living Room</option>
-                <option>Kitchen</option>
-                <option>Bedroom</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="roomType">
+                  <span>Room Type</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="roomType">
+                  <a href="#" class="dropdown-item" data-value="kitchen">Kitchen</a>
+                  <a href="#" class="dropdown-item" data-value="living-room">Living Room</a>
+                  <a href="#" class="dropdown-item" data-value="bedroom">Bedroom</a>
+                  <a href="#" class="dropdown-item" data-value="bathroom">Bathroom</a>
+                  <a href="#" class="dropdown-item" data-value="home-office">Home Office</a>
+                  <a href="#" class="dropdown-item" data-value="balcony">Balcony</a>
+                  <a href="#" class="dropdown-item" data-value="kids-room">Kids Room</a>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Budget Range</label>
-              <select class="form-select filter-select">
-                <option>Any Budget</option>
-                <option>Under $5K</option>
-                <option>$5K - $10K</option>
-                <option>$10K+</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="budgetRange">
+                  <span>Budget Range</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="budgetRange">
+                  <a href="#" class="dropdown-item" data-value="under-2l">Under ₹2L</a>
+                  <a href="#" class="dropdown-item" data-value="2-5l">₹2–₹5L</a>
+                  <a href="#" class="dropdown-item" data-value="5-10l">₹5–₹10L</a>
+                  <a href="#" class="dropdown-item" data-value="10l-plus">₹10L+</a>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Project Tags</label>
-              <select class="form-select filter-select">
-                <option>All Tags</option>
-                <option>Space-saving</option>
-                <option>Luxury</option>
-                <option>Budget</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="projectTags">
+                  <span>Project Tags</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="projectTags">
+                  <a href="#" class="dropdown-item" data-value="pet-friendly">Pet-Friendly</a>
+                  <a href="#" class="dropdown-item" data-value="smart-home">Smart Home</a>
+                  <a href="#" class="dropdown-item" data-value="eco-friendly">Eco-Friendly</a>
+                  <a href="#" class="dropdown-item" data-value="multi-functional">Multi-Functional</a>
+                  <a href="#" class="dropdown-item" data-value="renovation-friendly">Renovation-Friendly</a>
+                  <a href="#" class="dropdown-item" data-value="built-in-storage">Built-in Storage</a>
+                  <a href="#" class="dropdown-item" data-value="low-maintenance">Low Maintenance</a>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Design Goals</label>
-              <select class="form-select filter-select">
-                <option>All Goals</option>
-                <option>Maximize Space</option>
-                <option>Increase Storage</option>
-                <option>Modern Look</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="designGoals">
+                  <span>Design Goals</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="designGoals">
+                  <a href="#" class="dropdown-item" data-value="space-saving">Space Saving</a>
+                  <a href="#" class="dropdown-item" data-value="luxury-upgrade">Luxury Upgrade</a>
+                  <a href="#" class="dropdown-item" data-value="kid-friendly">Kid-Friendly</a>
+                  <a href="#" class="dropdown-item" data-value="open-concept">Open Concept</a>
+                  <a href="#" class="dropdown-item" data-value="rental-friendly">Rental-Friendly</a>
+                  <a href="#" class="dropdown-item" data-value="aging-in-place">Aging-in-Place</a>
+                  <a href="#" class="dropdown-item" data-value="easy-renovation">Easy Renovation</a>
+                </div>
+              </div>
             </div>
             <div class="filter-group">
-              <label class="filter-label">Sort By</label>
-              <select class="form-select filter-select">
-                <option>Most Popular</option>
-                <option>Price Low to High</option>
-                <option>Price High to Low</option>
-                <option>Newest</option>
-              </select>
+              <div class="filter-dropdown">
+                <button class="filter-btn" type="button" data-dropdown="sortBy">
+                  <span>Sort By</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu" id="sortBy">
+                  <a href="#" class="dropdown-item" data-value="newest">Newest</a>
+                  <a href="#" class="dropdown-item" data-value="most-viewed">Most Viewed</a>
+                  <a href="#" class="dropdown-item" data-value="most-saved">Most Saved by Users</a>
+                </div>
+              </div>
+            </div>
+            <div class="filter-group dp-original-group">
+              <span class="dp-original-text">DP Originals</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="dpOriginal" class="toggle-input" checked>
+                <label for="dpOriginal" class="toggle-label">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -282,8 +379,8 @@
       <!-- Project Listings -->
       <div class="projects-section">
         <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card">
+          <!-- Project 1 - DP Originals -->
+          <div class="project-card dp-original-banner">
             <div class="project-image-container">
               <div class="project-placeholder">
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
