@@ -1646,6 +1646,14 @@ p {
   right: -2.25rem;
 }
 
+/* Hide navigation buttons on mobile devices */
+@media (max-width: 768px) {
+  .categories-prev,
+  .categories-next {
+    display: none !important;
+  }
+}
+
 
 .category-item {
   display: flex;
