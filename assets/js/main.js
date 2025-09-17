@@ -107,6 +107,50 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Renovation Ideas Page Functionality
+  // Simple image carousel for project images
+  const projectImages = [
+    'assets/images/project/project-1-1.png',
+    'assets/images/project/project-1-2.png',
+    'assets/images/project/project-1-3.png',
+    'assets/images/project/project-1-4.png',
+    'assets/images/project/project-1-5.png',
+    'assets/images/project/project-1-6.png'
+  ];
+  
+  // Initialize carousel for each project
+  function initProjectCarousel(projectNumber) {
+    const projectImage = document.getElementById(`projectImage${projectNumber}`);
+    const prevBtn = document.getElementById(`prevBtn${projectNumber}`);
+    const nextBtn = document.getElementById(`nextBtn${projectNumber}`);
+    
+    if (projectImage && prevBtn && nextBtn) {
+      let currentImageIndex = 0;
+      
+      // Function to update image
+      function updateImage() {
+        projectImage.src = projectImages[currentImageIndex];
+      }
+      
+      // Previous button click
+      prevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+        updateImage();
+      });
+      
+      // Next button click
+      nextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+        updateImage();
+      });
+      
+    }
+  }
+  
+  // Initialize carousels for all projects
+  for (let i = 1; i <= 6; i++) {
+    initProjectCarousel(i);
+  }
+
   // Categories carousel functionality with Swiper
   if (window.Swiper) {
     const categoriesSwiper = new Swiper('.categories-swiper', {
@@ -279,14 +323,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const path = svg.querySelector('path');
       
       // Toggle like state
-      if (path.getAttribute('fill') === 'currentColor') {
+      if (this.classList.contains('active')) {
+        // Remove active state
+        this.classList.remove('active');
         path.setAttribute('fill', 'none');
         path.setAttribute('stroke', 'currentColor');
-        this.style.color = 'var(--clr-neutral-600)';
       } else {
+        // Add active state
+        this.classList.add('active');
         path.setAttribute('fill', 'currentColor');
         path.removeAttribute('stroke');
-        this.style.color = 'var(--clr-gold-600)';
       }
     });
   });
