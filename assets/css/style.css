@@ -181,6 +181,23 @@ body {
   --bs-btn-border-color: var(--clr-gold-700);
 }
 
+.btn-outline-primary {
+  --bs-btn-color: var(--dp-primary);
+  --bs-btn-border-color: var(--dp-primary);
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-color: var(--clr-neutral-0);
+  --bs-btn-hover-bg: var(--dp-primary);
+  --bs-btn-hover-border-color: var(--dp-primary);
+  --bs-btn-focus-shadow-rgb: var(--dp-primary);
+  --bs-btn-active-color: var(--clr-neutral-0);
+  --bs-btn-active-bg: var(--dp-primary);
+  --bs-btn-active-border-color: var(--dp-primary);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--dp-primary);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--dp-primary);
+}
+
 /* Override default button colors */
 .btn {
   --bs-btn-color: var(--clr-neutral-0);
@@ -1991,7 +2008,7 @@ p {
 
 /* Projects Grid */
 .projects-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .projects-grid {
@@ -2018,7 +2035,13 @@ p {
   border-radius: 0.75rem;
   overflow: hidden;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
 
 
 .project-image-container {
@@ -2041,6 +2064,11 @@ p {
   -moz-user-select: none;
   -ms-user-select: none;
   pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
 
 /* Project Image Swiper Navigation Buttons */
@@ -2237,32 +2265,68 @@ p {
   background: var(--clr-neutral-0);
   border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .video-tour-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
 }
 
 .video-placeholder {
-  height: 150px;
+  height: 300px;
   background: var(--clr-neutral-300);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--clr-gold-600);
   position: relative;
+  border-radius: 0.75rem 0.75rem 0 0;
+  overflow: hidden;
+}
+
+.video-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-tour-card:hover .video-image {
+  transform: scale(1.05);
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Mobile responsive height for video placeholder */
+@media (max-width: 768px) {
+  .video-placeholder {
+    height: 250px;
+  }
 }
 
 .video-title {
-  font-size: var(--fs-h6);
+  font-size: var(--fs-h5);
   font-weight: var(--fw-medium);
-  color: var(--clr-neutral-900);
-  padding: 1rem;
+  color: var(--clr-neutral-0);
+  padding: 1.5rem;
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  border: none;
+  z-index: 2;
 }
 
 /* Inspirations Section */
