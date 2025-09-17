@@ -2825,6 +2825,71 @@ p {
   transform: translateY(-1px);
 }
 
+/* Breadcrumb Styles */
+.breadcrumb {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-600);
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.breadcrumb a {
+  color: var(--clr-neutral-600);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--clr-neutral-900);
+}
+
+.breadcrumb .breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: var(--clr-neutral-400);
+}
+
+.breadcrumb .breadcrumb-current {
+  color: var(--clr-neutral-900);
+  font-weight: var(--fw-medium);
+}
+
+/* Career Page Styles */
+
+.career-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.no-openings-container {
+  background: var(--clr-cream-300);
+  border-radius: 0.75rem;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 3.75rem;
+}
+
+.no-openings-illustration {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.career-illustration {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+}
+
+.no-openings-message {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+  color: var(--clr-gold-700);
+  margin: 0;
+}
+
 /* Responsive Design for Sign In */
 @media (max-width: 768px) {
   .signin-content {
