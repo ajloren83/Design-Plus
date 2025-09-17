@@ -455,3 +455,86 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Country code dropdown functionality
+function initCountryCodeDropdown() {
+  const countryCode = document.querySelector('.country-code');
+  if (!countryCode) return;
+
+  // Create dropdown menu
+  const dropdown = document.createElement('div');
+  dropdown.className = 'country-dropdown';
+  dropdown.innerHTML = `
+    <div class="country-dropdown-menu">
+      <div class="country-option" data-code="+91">🇮🇳 +91</div>
+      <div class="country-option" data-code="+1">🇺🇸 +1</div>
+      <div class="country-option" data-code="+44">🇬🇧 +44</div>
+      <div class="country-option" data-code="+65">🇸🇬 +65</div>
+      <div class="country-option" data-code="+60">🇲🇾 +60</div>
+      <div class="country-option" data-code="+62">🇮🇩 +62</div>
+    </div>
+  `;
+
+  // Add styles
+  const style = document.createElement('style');
+  style.textContent = `
+    .country-code {
+      position: relative;
+      cursor: pointer;
+    }
+    .country-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
+      width: max-content;
+      background: var(--clr-neutral-0);
+      border-radius: 6px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: none;
+    }
+    .country-dropdown-menu {
+      padding: 0.5rem 0;
+    }
+    .country-option {
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .country-option:hover {
+      background: var(--clr-gold-50);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Insert dropdown after country code
+  countryCode.parentNode.insertBefore(dropdown, countryCode.nextSibling);
+
+  // Toggle dropdown
+  countryCode.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = dropdown.style.display === 'block';
+    dropdown.style.display = isOpen ? 'none' : 'block';
+  });
+
+  // Handle option selection
+  dropdown.addEventListener('click', function(e) {
+    if (e.target.classList.contains('country-option')) {
+      const code = e.target.dataset.code;
+      const text = e.target.textContent;
+      countryCode.querySelector('.country-code-text').textContent = code;
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    dropdown.style.display = 'none';
+  });
+}
+
+// Initialize country code dropdown when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initCountryCodeDropdown();
+});
