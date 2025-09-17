@@ -353,12 +353,29 @@ document.addEventListener('DOMContentLoaded', function () {
   // Search functionality
   const searchInput = document.querySelector('.search-input');
   const searchButton = document.querySelector('.search-container .btn');
+  const searchResults = document.getElementById('searchResults');
+  const searchQuery = document.querySelector('.search-query');
   
-  if (searchInput && searchButton) {
+  if (searchInput && searchButton && searchResults && searchQuery) {
     const performSearch = () => {
       const query = searchInput.value.trim();
       if (query) {
-        // Add search functionality here
+        // Update search query text with quotes
+        searchQuery.textContent = `"${query}"`;
+        // Show search results section
+        searchResults.style.display = 'block';
+        // Scroll to search results with offset for fixed navigation
+        const navHeight = 100; // Navigation height + 20px margin
+        const elementPosition = searchResults.offsetTop;
+        const offsetPosition = elementPosition - navHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Hide search results if no query
+        searchResults.style.display = 'none';
       }
     };
     

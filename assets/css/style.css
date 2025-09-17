@@ -2006,6 +2006,24 @@ p {
   
 }
 
+/* Search Results Section */
+.search-results-section {
+  margin: 1.25rem 0; /* 20px in rem */
+}
+
+.search-results-title {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+
+.search-query {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-900);
+}
+
 /* Projects Grid */
 .projects-section {
   margin-bottom: 1.5rem;
