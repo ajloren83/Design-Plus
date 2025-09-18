@@ -3495,6 +3495,19 @@ p {
     height: 300px;
     padding-bottom: 0;
   }
+
+  .modal-fullscreen .modal-content {
+    margin: 20vh 0 0 0;
+  }
+
+  .enquire-modal-container::before {
+    height: 20vh;
+  }
+
+  .enquire-close-btn {
+    top: 3rem;
+    right: 1rem;
+  }
   
   .enquire-modal-form {
     padding: 1.5rem;
