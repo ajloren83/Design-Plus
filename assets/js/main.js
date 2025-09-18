@@ -228,7 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close dropdowns when clicking outside
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.filter-dropdown')) {
+    // Don't interfere with Bootstrap dropdowns
+    if (!e.target.closest('.filter-dropdown') && !e.target.closest('.navbar .dropdown')) {
       document.querySelectorAll('.filter-dropdown').forEach(container => {
         container.classList.remove('active');
         const button = container.querySelector('.filter-btn');
@@ -237,8 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Handle dropdown item selection (only for regular dropdown items, not category-main)
-  const dropdownItems = document.querySelectorAll('.dropdown-item:not(.category-main)');
+  // Handle dropdown item selection (only for regular dropdown items, not category-main, not Bootstrap navbar dropdowns)
+  const dropdownItems = document.querySelectorAll('.filter-dropdown .dropdown-item:not(.category-main)');
   dropdownItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
@@ -265,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Handle sub-item selection (don't close dropdown)
-  const subItems = document.querySelectorAll('.sub-item');
+  const subItems = document.querySelectorAll('.filter-dropdown .sub-item');
   subItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
