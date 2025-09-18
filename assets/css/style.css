@@ -3941,6 +3941,16 @@ p {
   font-weight: var(--fw-medium);
 }
 
+a.contact-value  {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.contact-value :hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .phone-nationality-group {
   display: flex;
   gap: 1.5rem;
