@@ -538,4 +538,223 @@ function initCountryCodeDropdown() {
 // Initialize country code dropdown when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   initCountryCodeDropdown();
+  initEnquireModal();
 });
+
+// Enquire Modal functionality
+function initEnquireModal() {
+  // File upload functionality
+  const fileChooseBtn = document.querySelector('.file-choose-btn');
+  const fileInput = document.querySelector('.file-input');
+  const fileText = document.querySelector('.file-text');
+  
+  if (fileChooseBtn && fileInput && fileText) {
+    fileChooseBtn.addEventListener('click', function() {
+      fileInput.click();
+    });
+    
+    fileInput.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        fileText.textContent = this.files[0].name;
+        fileText.classList.add('has-file');
+      } else {
+        fileText.textContent = 'No file chosen';
+        fileText.classList.remove('has-file');
+      }
+    });
+  }
+  
+  // Country code dropdown for enquire modal
+  const enquireCountryCode = document.querySelector('.enquire-modal .country-code');
+  if (enquireCountryCode) {
+    initEnquireCountryCodeDropdown();
+  }
+  
+  // Custom theme dropdown
+  initCustomThemeDropdown();
+  
+  // Custom view dropdown
+  initCustomViewDropdown();
+}
+
+// Initialize custom theme dropdown
+function initCustomThemeDropdown() {
+  const dropdown = document.getElementById('themeDropdown');
+  const toggle = document.getElementById('themeToggle');
+  const menu = document.getElementById('themeMenu');
+  const selected = document.getElementById('themeSelected');
+  const hiddenInput = document.getElementById('enquireTheme');
+  const items = document.querySelectorAll('.custom-dropdown-item');
+
+  if (!dropdown || !toggle || !menu || !selected || !hiddenInput) return;
+
+  // Toggle dropdown
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+
+  // Handle item selection
+  items.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Update selected text
+      selected.textContent = item.textContent;
+      
+      // Update hidden input value
+      hiddenInput.value = item.dataset.value;
+      
+      // Update selected state
+      items.forEach(function(i) { i.classList.remove('selected'); });
+      item.classList.add('selected');
+      
+      // Close dropdown
+      dropdown.classList.remove('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+
+  // Close dropdown on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+    }
+  });
+}
+
+// Initialize custom view dropdown
+function initCustomViewDropdown() {
+  const dropdown = document.getElementById('viewDropdown');
+  const toggle = document.getElementById('viewToggle');
+  const menu = document.getElementById('viewMenu');
+  const selected = document.getElementById('viewSelected');
+  const hiddenInput = document.getElementById('enquireView');
+  const items = document.querySelectorAll('#viewMenu .custom-dropdown-item');
+
+  if (!dropdown || !toggle || !menu || !selected || !hiddenInput) return;
+
+  // Toggle dropdown
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+
+  // Handle item selection
+  items.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Update selected text
+      selected.textContent = item.textContent;
+      
+      // Update hidden input value
+      hiddenInput.value = item.dataset.value;
+      
+      // Update selected state
+      items.forEach(function(i) { i.classList.remove('selected'); });
+      item.classList.add('selected');
+      
+      // Close dropdown
+      dropdown.classList.remove('open');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+
+  // Close dropdown on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+    }
+  });
+}
+
+// Country code dropdown for enquire modal
+function initEnquireCountryCodeDropdown() {
+  const countryCode = document.querySelector('.enquire-modal .country-code');
+  if (!countryCode) return;
+
+  // Create dropdown menu
+  const dropdown = document.createElement('div');
+  dropdown.className = 'country-dropdown';
+  dropdown.innerHTML = `
+    <div class="country-dropdown-menu">
+      <div class="country-option" data-code="+91">🇮🇳 +91</div>
+      <div class="country-option" data-code="+1">🇺🇸 +1</div>
+      <div class="country-option" data-code="+44">🇬🇧 +44</div>
+      <div class="country-option" data-code="+65">🇸🇬 +65</div>
+      <div class="country-option" data-code="+60">🇲🇾 +60</div>
+      <div class="country-option" data-code="+62">🇮🇩 +62</div>
+      <div class="country-option" data-code="+66">🇹🇭 +66</div>
+    </div>
+  `;
+
+  // Add styles
+  const style = document.createElement('style');
+  style.textContent = `
+    .enquire-modal .country-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--clr-neutral-0);
+      border: 1px solid var(--clr-cream-300);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: none;
+    }
+    .enquire-modal .country-dropdown-menu {
+      padding: 0.5rem 0;
+    }
+    .enquire-modal .country-option {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: var(--fs-h6);
+      color: var(--clr-neutral-900);
+      transition: background-color 0.3s ease;
+    }
+    .enquire-modal .country-option:hover {
+      background: var(--clr-cream-200);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Insert dropdown after country code
+  countryCode.parentNode.insertBefore(dropdown, countryCode.nextSibling);
+  countryCode.parentNode.style.position = 'relative';
+
+  // Toggle dropdown
+  countryCode.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = dropdown.style.display === 'block';
+    dropdown.style.display = isOpen ? 'none' : 'block';
+  });
+
+  // Handle option selection
+  dropdown.addEventListener('click', function(e) {
+    if (e.target.classList.contains('country-option')) {
+      const code = e.target.dataset.code;
+      const text = e.target.textContent;
+      countryCode.querySelector('.country-code-text').textContent = code;
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    dropdown.style.display = 'none';
+  });
+}
