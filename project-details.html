@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compact Chef | Design Plus</title>
+
+  <!-- Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon/favicon.png">
+  <link rel="alternate icon" href="assets/favicon/favicon.png">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar bg-neutral-900 text-white py-2">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item me-4">
+              <a href="#faqs" class="text-white-75 text-decoration-none">FAQs</a>
+            </li>
+            <li class="list-inline-item me-4">
+              <a href="#renovation-estimate" class="text-white-75 text-decoration-none">Renovation Estimate</a>
+            </li>
+            <li class="list-inline-item me-4">
+              <a href="#dp-assure" class="text-white-75 text-decoration-none">DP Assure</a>
+            </li>
+            <li class="list-inline-item">
+              <div class="dropdown">
+                <button class="btn btn-link text-gold-600 text-decoration-none dropdown-toggle" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Singapore
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" data-value="sg">Singapore</a></li>
+                  <li><a class="dropdown-item" href="#" data-value="my">Malaysia</a></li>
+                  <li><a class="dropdown-item" href="#" data-value="id">Indonesia</a></li>
+                  <li><a class="dropdown-item" href="#" data-value="th">Thailand</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/brand/logo.png" alt="DesignPlus" height="48" loading="lazy" decoding="async">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Center Navigation -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="renovation-ideas.html">Renovation Idea</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#interior">Interior Designers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#event">Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Know Us Better
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#about">About Us</a></li>
+              <li><a class="dropdown-item" href="our-services.html">Our Services</a></li>
+              <li><a class="dropdown-item" href="#how-it-works">How It Works</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Buttons -->
+        <div class="d-flex gap-2">
+          <a href="#enquire" class="btn btn-primary">Enquire</a>
+          <a href="sign-in.html" class="btn btn-outline-primary">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-section">
+    <div class="container">
+      <h6 class="breadcrumb">
+        <a href="renovation-ideas.html">Renovation idea</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">Compact Chef</span>
+      </h6>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Left Column - Project Display -->
+      <div class="col-lg-8">
+        <!-- Project Title -->
+        <div class="project-header">
+          <div class="project-header-left">
+            <h3 class="project-main-title">Compact Chef</h3>
+            <h5 class="project-subtitle">Compact kitchen spaces</h5>
+          </div>
+          <div class="project-header-right">
+            <div class="project-tag">HDB</div>
+            <div class="design-style">Scandinavian</div>
+          </div>
+        </div>
+
+        <!-- Project Image Gallery -->
+        <div class="project-gallery">
+          <div class="gallery-container">
+            <div class="main-image-section">
+              <div class="main-image-container">
+                <img src="assets/images/project-details/compact-chef/compact-chef-1.png" alt="Compact Chef Kitchen 1" class="img-fluid main-image" id="mainImage">
+                <div class="image-counter">1/5</div>
+                <button class="btn btn-link nav-btn prev-btn" id="prevImageBtn">
+                  <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 8L12 15L18 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="btn btn-link nav-btn next-btn" id="nextImageBtn">
+                  <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8L18 15L12 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="btn btn-link fullscreen-btn">
+                  <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 18L5 25M5 25H10.8571M5 25V19.1429" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18 12L25 5M25 5H19.1429M25 5V10.8571" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                      
+                </button>
+              </div>
+            </div>
+            <div class="side-images-section">
+              <div class="side-images-container">
+                <div class="swiper side-images-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide side-image-slide">
+                      <img src="assets/images/project-details/compact-chef/compact-chef-1.png" alt="Compact Chef Kitchen 1" class="img-fluid side-image">
+                    </div>
+                    <div class="swiper-slide side-image-slide">
+                      <img src="assets/images/project-details/compact-chef/compact-chef-2.png" alt="Compact Chef Kitchen 2" class="img-fluid side-image">
+                    </div>
+                    <div class="swiper-slide side-image-slide">
+                      <img src="assets/images/project-details/compact-chef/compact-chef-3.png" alt="Compact Chef Kitchen 3" class="img-fluid side-image">
+                    </div>
+                    <div class="swiper-slide side-image-slide">
+                      <img src="assets/images/project-details/compact-chef/compact-chef-4.png" alt="Compact Chef Kitchen 4" class="img-fluid side-image">
+                    </div>
+                    <div class="swiper-slide side-image-slide">
+                      <img src="assets/images/project-details/compact-chef/compact-chef-5.png" alt="Compact Chef Kitchen 5" class="img-fluid side-image">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="project-details-section">
+          <h4 class="section-title">Project Details</h4>
+          
+          <div class="project-info-grid">
+            <div class="info-item">
+              <h6 class="info-label">Renovation Cost</h6>
+              <h5 class="info-value">S$55,000</h5>
+            </div>
+            <div class="info-item">
+              <h6 class="info-label">Area Size</h6>
+              <h5 class="info-value">93m²</h5>
+            </div>
+            <div class="info-item">
+              <h6 class="info-label">Year of Completion</h6>
+              <h5 class="info-value">2023</h5>
+            </div>
+            <div class="info-item">
+              <h6 class="info-label">Interior Style</h6>
+              <h5 class="info-value">Scandinavian</h5>
+            </div>
+          </div>
+
+          <div class="project-lists">
+            <div class="project-list-section">
+              <h5 class="project-list-title">Suitable Estate</h5>
+              <div class="project-checkbox-list">
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">Tengah</span>
+                </div>
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">Nanyang Opal</span>
+                </div>
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">Tampines Cove</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-list-section">
+              <h5 class="project-list-title">Optional Upgrade</h5>
+              <div class="project-checkbox-list">
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">12mm Sintered worktop</span>
+                </div>
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">Hood/hob/sink & tap bundle</span>
+                </div>
+                <div class="project-checkbox-item">
+                  <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                  <span class="project-checkbox-label">LED lighting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-list-section">
+            <h5 class="project-list-title">Works Included</h5>
+            <div class="project-checkbox-list project-works-included">
+              <div class="project-checkbox-item">
+                <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                <span class="project-checkbox-label">Carpentry</span>
+              </div>
+              <div class="project-checkbox-item">
+                <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                <span class="project-checkbox-label">Plumbing work</span>
+              </div>
+              <div class="project-checkbox-item">
+                <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                <span class="project-checkbox-label">Dish rack</span>
+              </div>
+              <div class="project-checkbox-item">
+                <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                <span class="project-checkbox-label">Cutlery tray</span>
+              </div>
+              <div class="project-checkbox-item">
+                <img src="assets/icons/check.svg" alt="Check" class="project-checkbox-icon">
+                <span class="project-checkbox-label">Soft closing drawers</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Designer Section -->
+          <div class="project-designer-section">
+            <div class="project-designer-image">
+              <img src="assets/images/designer/calvin-ong.png" alt="Calvin Ong" class="project-designer-photo">
+            </div>
+            <div class="project-designer-details">
+              <h4 class="project-designer-name">Calvin Ong</h4>
+              <p class="project-designer-title">Senior Creative Designer</p>
+              <div class="project-designer-rating">
+                <img src="assets/icons/star.svg" alt="Star" class="project-star-icon">
+                <span class="project-rating-text">5.0</span>
+              </div>
+            </div>
+            <div class="project-designer-stats">
+              <div class="project-stat-item">
+                <span class="project-stat-label">$1000</span>
+                <span class="project-stat-value">and above Preferred Budget</span>
+              </div>
+              <div class="project-stat-item">
+                <span class="project-stat-label">4 Years</span>
+                <span class="project-stat-value">of Experience</span>
+              </div>
+              <div class="project-stat-item">
+                <span class="project-stat-label">11-50</span>
+                <span class="project-stat-value">Homes Renovated</span>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary project-designer-button">View profile</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Estimate Form -->
+      <div class="col-lg-4">
+        <div class="estimate-form-container">
+          <h4 class="estimate-form-title">Get your estimate</h4>
+          <form class="estimate-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="propertyType" class="form-label">Property type</label>
+                <div class="custom-dropdown" id="propertyTypeDropdown">
+                  <div class="custom-dropdown-toggle" id="propertyTypeToggle">
+                    <span id="propertyTypeSelected">HDB</span>
+                    <svg class="custom-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                      <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="custom-dropdown-menu">
+                    <div class="custom-dropdown-item" data-value="hdb">HDB</div>
+                    <div class="custom-dropdown-item" data-value="condo">Condo</div>
+                    <div class="custom-dropdown-item" data-value="landed">Landed</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="propertyStatus" class="form-label">Property status</label>
+                <div class="custom-dropdown" id="propertyStatusDropdown">
+                  <div class="custom-dropdown-toggle" id="propertyStatusToggle">
+                    <span id="propertyStatusSelected">New</span>
+                    <svg class="custom-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                      <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="custom-dropdown-menu">
+                    <div class="custom-dropdown-item" data-value="new">New</div>
+                    <div class="custom-dropdown-item" data-value="resale">Resale</div>
+                    <div class="custom-dropdown-item" data-value="renovation">Renovation</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="areaSize" class="form-label">Area Size</label>
+                <div class="area-input-group">
+                  <input type="number" class="form-input area-input" id="areaSize" placeholder="Enter size">
+                  <div class="custom-dropdown area-unit-dropdown" id="areaUnitDropdown">
+                    <div class="custom-dropdown-toggle" id="areaUnitToggle">
+                      <span id="areaUnitSelected">M²</span>
+                      <svg class="custom-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="custom-dropdown-menu">
+                      <div class="custom-dropdown-item" data-value="sqm">M²</div>
+                      <div class="custom-dropdown-item" data-value="sqft">Sq Ft</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget" class="form-label">Budget (S$)</label>
+                <input type="number" class="form-input" id="budget" placeholder="Enter budget">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="stylePreference" class="form-label">Style preference</label>
+              <div class="custom-dropdown" id="stylePreferenceDropdown">
+                <div class="custom-dropdown-toggle" id="stylePreferenceToggle">
+                  <span id="stylePreferenceSelected">No preference</span>
+                  <svg class="custom-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="custom-dropdown-menu">
+                  <div class="custom-dropdown-item" data-value="no-preference">No preference</div>
+                  <div class="custom-dropdown-item" data-value="scandinavian">Scandinavian</div>
+                  <div class="custom-dropdown-item" data-value="modern">Modern</div>
+                  <div class="custom-dropdown-item" data-value="traditional">Traditional</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="keysCollected" class="form-label">Keys collected</label>
+              <div class="custom-dropdown" id="keysCollectedDropdown">
+                <div class="custom-dropdown-toggle" id="keysCollectedToggle">
+                  <span id="keysCollectedSelected">Yes</span>
+                  <svg class="custom-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="custom-dropdown-menu">
+                  <div class="custom-dropdown-item" data-value="yes">Yes</div>
+                  <div class="custom-dropdown-item" data-value="no">No</div>
+                  <div class="custom-dropdown-item" data-value="soon">Soon</div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Get free quote</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Similar Ideas Section -->
+  <div class="similar-ideas-section">
+    <div class="container">
+      <h3 class="similar-ideas-title">Similar ideas</h3>
+      <!-- Project Listings -->
+      <div class="projects-section">
+        <div class="projects-grid">
+          <!-- Project 1 - DP Originals -->
+          <div class="project-card dp-original-banner">
+            <div class="project-image-container">
+              <img src="assets/images/project/project-1-1.png" alt="Project 1" class="project-image" id="projectImage1" loading="lazy" decoding="async">
+              <!-- Navigation buttons -->
+              <div class="project-swiper-button-prev" id="prevBtn1">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 1L1.5 5L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-swiper-button-next" id="nextBtn1">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 1L6.5 5L1.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-actions">
+                <button class="project-like-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04097 1.5487 8.5C1.5487 9.95903 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.06211 22.0329 6.39467C21.7563 5.72723 21.351 5.1208 20.84 4.61Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-details-container">
+                <h5 class="project-title">Compact Chef</h3>
+                  <p class="project-description">Compact kitchen spaces</p>
+                  <div class="project-price">$4520</div>
+                  <a href="project-details.html" class="project-details-link">Check full details</a>
+              </div>
+              <div class="project-tag">HDB</div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="assets/images/project/project-1-2.png" alt="Project 2" class="project-image" id="projectImage2" loading="lazy" decoding="async">
+              <!-- Navigation buttons -->
+              <div class="project-swiper-button-prev" id="prevBtn2">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 1L1.5 5L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-swiper-button-next" id="nextBtn2">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 1L6.5 5L1.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-actions">
+                <button class="project-like-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04097 1.5487 8.5C1.5487 9.95903 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.06211 22.0329 6.39467C21.7563 5.72723 21.351 5.1208 20.84 4.61Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-details-container">
+                <h5 class="project-title">Project name</h3>
+                  <p class="project-description">Small kitchen designs</p>
+                  <div class="project-price">$5120</div>
+                  <a href="#" class="project-details-link">Check full details</a>
+              </div>
+              <div class="project-tag">Commercial</div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-image-container">
+              <img src="assets/images/project/project-1-3.png" alt="Project 3" class="project-image" id="projectImage3" loading="lazy" decoding="async">
+              <!-- Navigation buttons -->
+              <div class="project-swiper-button-prev" id="prevBtn3">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 1L1.5 5L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-swiper-button-next" id="nextBtn3">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 1L6.5 5L1.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="project-actions">
+                <button class="project-like-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04097 1.5487 8.5C1.5487 9.95903 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.06211 22.0329 6.39467C21.7563 5.72723 21.351 5.1208 20.84 4.61Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-details-container">
+                <h5 class="project-title">Efficient Space</h3>
+                  <p class="project-description">Efficient cooking areas</p>
+                  <div class="project-price">$3780</div>
+                  <a href="#" class="project-details-link">Check full details</a>
+              </div>
+              <div class="project-tag">HDB</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/brand/logo.png" alt="DesignPlus" height="62" loading="lazy" decoding="async">
+          </div>
+          <h6 class="footer-company-name">Design Plus Interior Pte. Ltd</h6>
+          <div class="footer-certifications">
+            <img src="assets/images/hdb-img.png" alt="HDB Licensed" class="certification-img" loading="lazy" decoding="async">
+            <img src="assets/images/bizsafe-img.png" alt="bizSAFE" class="certification-img" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="footer-info">
+          <div class="footer-section footer-address">
+            <h5 class="footer-section-title">Address</h5>
+            <p class="footer-text">70A Neil Road Singapore 088837</p>
+          </div>
+          <div class="footer-section footer-uen">
+            <h5 class="footer-section-title">UEN</h5>
+            <p class="footer-text">201937838G</p>
+          </div>
+          <div class="footer-section footer-license">
+            <h5 class="footer-section-title">HDB License</h5>
+            <p class="footer-text">HB-05-5965C</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section footer-know-us">
+            <h5 class="footer-section-title">Know us better</h5>
+            <ul class="footer-menu">
+              <li><a href="#about" class="footer-link">About Us</a></li>
+              <li><a href="our-services.html" class="footer-link">Our Services</a></li>
+              <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+            </ul>
+          </div>
+          <div class="footer-section footer-social">
+            <h5 class="footer-section-title">Social</h5>
+            <div class="footer-social-icons">
+              <a href="https://www.facebook.com/designplussg" aria-label="Facebook" class="footer-social-link" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook.svg" alt="Facebook" class="footer-social-icon" loading="lazy" decoding="async"></a>
+              <a href="https://www.behance.net/designplussg" aria-label="Behance" class="footer-social-link" target="_blank" rel="noopener noreferrer"><img src="assets/icons/behance.svg" alt="Behance" class="footer-social-icon" loading="lazy" decoding="async"></a>
+              <a href="https://www.instagram.com/sgdesignplus/" aria-label="Instagram" class="footer-social-link" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.svg" alt="Instagram" class="footer-social-icon" loading="lazy" decoding="async"></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links-2">
+          <div class="footer-section footer-get-started">
+            <h5 class="footer-section-title">Get started</h5>
+            <ul class="footer-menu">
+              <li><a href="#designers" class="footer-link">Designers/Partners</a></li>
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-section footer-download">
+            <h5 class="footer-section-title">Download</h5>
+            <div class="footer-store-badges">
+              <a href="https://apps.apple.com/us/app/designplus-interior/id6451096540" target="_blank" rel="noopener noreferrer">
+                <img src="assets/images/app-store.svg" alt="App Store" class="footer-store-img" loading="lazy" decoding="async">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.designplus.sg" target="_blank" rel="noopener noreferrer">
+                <img src="assets/images/play-store.svg" alt="Google Play" class="footer-store-img" loading="lazy" decoding="async">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links-3">
+          <div class="footer-section footer-support">
+            <h5 class="footer-section-title">Support</h5>
+            <ul class="footer-menu">
+              <li><a href="#faqs" class="footer-link">FAQs</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+              <li><a href="career.html" class="footer-link">Career</a></li>
+              <li><a href="#onboarding" class="footer-link">Designer Onboarding</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy container-fluid">
+      <div class="container">
+        <div class="footer-copy-left">
+          <div class="footer-copy-text">© Copyright Design Plus Interior Pte. Ltd., <span data-current-year>2025</span> . All Rights Reserved.</div>
+        </div>
+        <div class="footer-copy-right">
+          <a href="#faqs" class="footer-copy-link">FAQs</a>
+          <a href="#terms" class="footer-copy-link">Terms of Service</a>
+          <a href="#privacy" class="footer-copy-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note container-fluid">
+      <div class="container">
+        <div class="footer-note-text">DESIGN PLUS INTERIOR PTE LTD will be committed to ensuring the customer data and particulars will be kept confidential.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Fullscreen Gallery Modal -->
+  <div class="modal fade" id="fullscreenGalleryModal" tabindex="-1" aria-labelledby="fullscreenGalleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content gallery-modal-content">
+        <div class="modal-body p-0">
+          <div class="gallery-modal-container">
+            <div class="gallery-modal-header">
+              <button type="button" class="btn-close gallery-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="gallery-modal-content-area">
+              <button class="btn btn-link gallery-modal-nav-btn gallery-modal-prev-btn" id="galleryModalPrevBtn">
+                <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 8L12 15L18 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="gallery-image-container">
+                <img src="" alt="" class="gallery-modal-image" id="galleryModalImage">
+                <div class="gallery-modal-counter" id="galleryModalCounter">1/5</div>
+              </div>
+              <button class="btn btn-link gallery-modal-nav-btn gallery-modal-next-btn" id="galleryModalNextBtn">
+                <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 8L18 15L12 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  
+</body>
+
+</html>

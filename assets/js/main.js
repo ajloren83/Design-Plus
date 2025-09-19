@@ -104,6 +104,203 @@ document.addEventListener('DOMContentLoaded', function () {
         momentum: false,
       },
     });
+
+    // Init Swiper for Project Gallery Side Images
+    const sideImagesSwiper = new Swiper('.side-images-swiper', {
+      direction: 'vertical',
+      slidesPerView: 4.5,
+      spaceBetween: 16, // 1rem = 16px
+      freeMode: true,
+      watchSlidesProgress: true,
+      centeredSlides: false,
+      on: {
+        slideChange: function() {
+          // Update main image when side image is clicked
+          const activeSlide = this.slides[this.activeIndex];
+          if (activeSlide) {
+            const img = activeSlide.querySelector('img');
+            if (img) {
+              const mainImage = document.getElementById('mainImage');
+              const imageCounter = document.querySelector('.image-counter');
+              if (mainImage) {
+                mainImage.src = img.src;
+                mainImage.alt = img.alt;
+              }
+              if (imageCounter) {
+                imageCounter.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Add click handlers to side images
+    const sideImageSlides = document.querySelectorAll('.side-image-slide');
+    sideImageSlides.forEach((slide, index) => {
+      slide.addEventListener('click', function() {
+        // Update current image index
+        currentImageIndex = index;
+        
+        // Update main image
+        const img = this.querySelector('img');
+        if (img) {
+          const mainImage = document.getElementById('mainImage');
+          const imageCounter = document.querySelector('.image-counter');
+          if (mainImage) {
+            mainImage.src = img.src;
+            mainImage.alt = img.alt;
+          }
+          if (imageCounter) {
+            imageCounter.textContent = `${index + 1}/${sideImageSlides.length}`;
+          }
+        }
+        
+        // Scroll to show the selected image fully
+        // For the last image, we need to scroll more to show it completely
+        if (index === sideImageSlides.length - 1) {
+          // For the last image, scroll to show it fully
+          sideImagesSwiper.slideTo(index, 300);
+          // Additional scroll to ensure last image is fully visible
+          setTimeout(() => {
+            const swiperWrapper = sideImagesSwiper.wrapperEl;
+            const slideHeight = sideImageSlides[index].offsetHeight;
+            const spaceBetween = 16; // 1rem = 16px
+            const totalScroll = (index * (slideHeight + spaceBetween)) + slideHeight;
+            swiperWrapper.style.transform = `translate3d(0px, -${totalScroll - sideImagesSwiper.height}px, 0px)`;
+          }, 50);
+        } else {
+          sideImagesSwiper.slideTo(index, 300);
+        }
+        
+        // Update active slide after a short delay
+        setTimeout(() => {
+          sideImageSlides.forEach(s => s.classList.remove('swiper-slide-active'));
+          this.classList.add('swiper-slide-active');
+        }, 50);
+      });
+    });
+
+    // Set first slide as active
+    if (sideImageSlides.length > 0) {
+      sideImageSlides[0].classList.add('swiper-slide-active');
+    }
+
+    // Navigation buttons functionality
+    const prevBtn = document.getElementById('prevImageBtn');
+    const nextBtn = document.getElementById('nextImageBtn');
+    const mainImage = document.getElementById('mainImage');
+    const imageCounter = document.querySelector('.image-counter');
+    let currentImageIndex = 0;
+
+    function updateMainImage(index) {
+      if (sideImageSlides[index]) {
+        const img = sideImageSlides[index].querySelector('img');
+        if (img && mainImage) {
+          mainImage.src = img.src;
+          mainImage.alt = img.alt;
+        }
+        if (imageCounter) {
+          imageCounter.textContent = `${index + 1}/${sideImageSlides.length}`;
+        }
+        
+        // Scroll to show the selected image fully
+        // For the last image, we need to scroll more to show it completely
+        if (index === sideImageSlides.length - 1) {
+          // For the last image, scroll to show it fully
+          sideImagesSwiper.slideTo(index, 300);
+          // Additional scroll to ensure last image is fully visible
+          setTimeout(() => {
+            const swiperWrapper = sideImagesSwiper.wrapperEl;
+            const slideHeight = sideImageSlides[index].offsetHeight;
+            const spaceBetween = 16; // 1rem = 16px
+            const totalScroll = (index * (slideHeight + spaceBetween)) + slideHeight;
+            swiperWrapper.style.transform = `translate3d(0px, -${totalScroll - sideImagesSwiper.height}px, 0px)`;
+          }, 50);
+        } else {
+          sideImagesSwiper.slideTo(index, 300);
+        }
+        
+        // Update active slide after a short delay to ensure Swiper has updated
+        setTimeout(() => {
+          sideImageSlides.forEach(s => s.classList.remove('swiper-slide-active'));
+          if (sideImageSlides[index]) {
+            sideImageSlides[index].classList.add('swiper-slide-active');
+          }
+        }, 50);
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + sideImageSlides.length) % sideImageSlides.length;
+        updateMainImage(currentImageIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % sideImageSlides.length;
+        updateMainImage(currentImageIndex);
+      });
+    }
+
+    // Fullscreen button functionality
+    const fullscreenBtn = document.querySelector('.fullscreen-btn');
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', function() {
+        // Get current image and counter
+        const mainImage = document.getElementById('mainImage');
+        const imageCounter = document.querySelector('.image-counter');
+        const modalImage = document.getElementById('galleryModalImage');
+        const modalCounter = document.getElementById('galleryModalCounter');
+        
+        if (mainImage && modalImage) {
+          modalImage.src = mainImage.src;
+          modalImage.alt = mainImage.alt;
+        }
+        
+        if (imageCounter && modalCounter) {
+          modalCounter.textContent = imageCounter.textContent;
+        }
+        
+        const modal = new bootstrap.Modal(document.getElementById('fullscreenGalleryModal'));
+        modal.show();
+      });
+    }
+
+    // Modal navigation functionality
+    const modalPrevBtn = document.getElementById('galleryModalPrevBtn');
+    const modalNextBtn = document.getElementById('galleryModalNextBtn');
+    const modalImage = document.getElementById('galleryModalImage');
+    const modalCounter = document.getElementById('galleryModalCounter');
+
+    function updateModalImage(index) {
+      if (sideImageSlides[index]) {
+        const img = sideImageSlides[index].querySelector('img');
+        if (img && modalImage) {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+        }
+        if (modalCounter) {
+          modalCounter.textContent = `${index + 1}/${sideImageSlides.length}`;
+        }
+      }
+    }
+
+    if (modalPrevBtn) {
+      modalPrevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + sideImageSlides.length) % sideImageSlides.length;
+        updateModalImage(currentImageIndex);
+      });
+    }
+
+    if (modalNextBtn) {
+      modalNextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % sideImageSlides.length;
+        updateModalImage(currentImageIndex);
+      });
+    }
   }
 
   // Renovation Ideas Page Functionality
@@ -758,3 +955,58 @@ function initEnquireCountryCodeDropdown() {
     dropdown.style.display = 'none';
   });
 }
+
+// Custom Dropdown Functionality for Estimate Form
+function initializeCustomDropdowns() {
+  const dropdowns = document.querySelectorAll('.custom-dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.custom-dropdown-toggle');
+    const menu = dropdown.querySelector('.custom-dropdown-menu');
+    const items = dropdown.querySelectorAll('.custom-dropdown-item');
+    const selectedSpan = dropdown.querySelector('span[id$="Selected"]');
+    
+    if (!toggle || !menu || !selectedSpan) return;
+    
+    // Toggle dropdown
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    
+    // Handle item selection
+    items.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const value = item.getAttribute('data-value');
+        const text = item.textContent;
+        
+        // Update selected text
+        selectedSpan.textContent = text;
+        
+        // Update selected state
+        items.forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        
+        // Close dropdown
+        dropdown.classList.remove('open');
+        
+        // Trigger change event for form validation
+        const event = new Event('change', { bubbles: true });
+        dropdown.dispatchEvent(event);
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+  });
+}
+
+// Initialize custom dropdowns when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeCustomDropdowns();
+});
