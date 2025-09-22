@@ -5467,3 +5467,16 @@ a.contact-value :hover {
       display: none;
     }
 }
+
+.similar-inspiration-section{
+  margin: 3.75rem 0;  
+}
+
+@media (max-width: 768px) {
+  .similar-inspiration-section{
+    margin-top: 0;
+  }
+  .inspiration-view-project-btn{
+    margin-bottom: 1.5rem;
+  }
+}
