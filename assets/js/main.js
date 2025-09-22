@@ -348,6 +348,101 @@ document.addEventListener('DOMContentLoaded', function () {
     initProjectCarousel(i);
   }
 
+  // Designer images array (you can add more images as needed)
+  const designerImages = [
+    'assets/images/interior-designers/interior-designer-1.png',
+    'assets/images/interior-designers/interior-designer-2.jpg',
+    'assets/images/interior-designers/interior-designer-3.jpg',
+    'assets/images/interior-designers/interior-designer-4.jpg',
+    'assets/images/interior-designers/interior-designer-5.jpg',
+    'assets/images/interior-designers/interior-designer-6.jpg'
+  ];
+  
+  // Initialize designer carousel for each designer
+  function initDesignerCarousel(designerNumber) {
+    const designerImage = document.getElementById(`designerImage${designerNumber}`);
+    const prevBtn = document.getElementById(`designerPrevBtn${designerNumber}`);
+    const nextBtn = document.getElementById(`designerNextBtn${designerNumber}`);
+    const pagination = document.getElementById(`designerPagination${designerNumber}`);
+    
+    if (designerImage && prevBtn && nextBtn && pagination) {
+      let currentImageIndex = 0;
+      const dots = pagination.querySelectorAll('.interior-designer-pagination-dot');
+      
+      // Function to update image and pagination
+      function updateDesignerImage() {
+        designerImage.src = designerImages[currentImageIndex];
+        
+        // Update pagination dots
+        dots.forEach((dot, index) => {
+          if (index === currentImageIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Previous button click
+      prevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + designerImages.length) % designerImages.length;
+        updateDesignerImage();
+      });
+      
+      // Next button click
+      nextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % designerImages.length;
+        updateDesignerImage();
+      });
+      
+      // Pagination dot clicks
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          currentImageIndex = index;
+          updateDesignerImage();
+        });
+      });
+    }
+  }
+  
+  // Initialize designer carousels for all designers
+  for (let i = 1; i <= 9; i++) {
+    initDesignerCarousel(i);
+  }
+
+  // Toggle review categories visibility
+  function toggleReviewCategories(categoriesId, linkElement) {
+    const categories = document.getElementById(categoriesId);
+    if (categories) {
+      categories.classList.toggle('hidden');
+      linkElement.textContent = categories.classList.contains('hidden') ? 'Read more' : 'Hide';
+    }
+  }
+
+
+  // Make function globally available
+  window.toggleReviewCategories = toggleReviewCategories;
+
+  // Handle pagination button states
+  function updatePaginationButtons() {
+    const activeNumber = document.querySelector('.pagination-number.active');
+    const backButton = document.querySelector('.pagination-btn');
+    
+    if (activeNumber && backButton) {
+      const currentPage = parseInt(activeNumber.textContent);
+      if (currentPage === 1) {
+        backButton.classList.add('disabled');
+      } else {
+        backButton.classList.remove('disabled');
+      }
+    }
+  }
+
+  // Initialize pagination button states
+  document.addEventListener('DOMContentLoaded', function() {
+    updatePaginationButtons();
+  });
+
   // Categories carousel functionality with Swiper
   if (window.Swiper) {
     const categoriesSwiper = new Swiper('.categories-swiper', {
