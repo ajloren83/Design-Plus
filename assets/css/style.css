@@ -5779,3 +5779,79 @@ a.contact-value :hover {
   flex-wrap: nowrap;
   align-items: stretch;
 }
+
+/* FAQ Page Styles */
+.faq-content {
+  padding-bottom: 3.75rem;
+}
+
+.faq-section {
+  margin-bottom: 3rem;
+}
+
+.faq-section:last-child {
+  margin-bottom: 0;
+}
+
+.faq-section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-gold-700);
+  margin-bottom: 3rem;
+}
+
+.faq-section-title.supplier,
+.faq-section-title.homeowners {
+  color: var(--clr-gold-700);
+}
+
+.faq-section-intro {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.faq-list {
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  padding-bottom: 3rem;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.faq-answer {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+
+.faq-link {
+  color: var(--clr-gold-600);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+.faq-link:hover {
+  color: var(--clr-gold-700);
+}
+
+.faq-note {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  margin: 0;
+  padding: 1rem;
+  border-left: 4px solid var(--clr-gold-600);
+}
