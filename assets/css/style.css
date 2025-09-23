@@ -5855,3 +5855,52 @@ a.contact-value :hover {
   padding: 1rem;
   border-left: 4px solid var(--clr-gold-600);
 }
+
+/* Terms of Service Page Styles */
+.terms-content {
+  padding-bottom: 3.75rem;
+}
+
+.terms-section {
+  margin-bottom: 3rem;
+}
+
+.terms-section:last-child {
+  margin-bottom: 0;
+}
+
+.terms-section-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.terms-text {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.terms-list {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.terms-list li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-link {
+  color: var(--clr-gold-600);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+.terms-link:hover {
+  color: var(--clr-gold-700);
+}
