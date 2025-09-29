@@ -491,6 +491,135 @@ document.addEventListener('DOMContentLoaded', function () {
     
   }
 
+  // Initialize Masonry.js only for inspiration details page
+  if (window.Masonry && document.body.classList.contains('inspiration-details')) {
+    const gallery = document.querySelector('.inspiration-gallery');
+    if (gallery) {
+      // Wait for images to load before initializing Masonry
+      const images = gallery.querySelectorAll('.gallery-img');
+      let loadedImages = 0;
+      
+      const initMasonry = () => {
+        new Masonry(gallery, {
+          itemSelector: '.gallery-item',
+          columnWidth: '.gallery-item',
+          percentPosition: true,
+          gutter: 12, // 12px gap
+          horizontalOrder: true,
+          fitWidth: true // Center the container
+        });
+      };
+
+      if (images.length === 0) {
+        // No images, initialize immediately
+        initMasonry();
+      } else {
+        // Wait for all images to load
+        images.forEach(img => {
+          if (img.complete) {
+            loadedImages++;
+          } else {
+            img.addEventListener('load', () => {
+              loadedImages++;
+              if (loadedImages === images.length) {
+                initMasonry();
+              }
+            });
+          }
+        });
+        
+        // If all images are already loaded
+        if (loadedImages === images.length) {
+          initMasonry();
+        }
+      }
+
+      // Re-layout on window resize
+      window.addEventListener('resize', () => {
+        if (gallery.masonry) {
+          gallery.masonry.layout();
+        }
+      });
+
+    }
+  }
+
+  // Load More functionality
+  function initLoadMore() {
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    
+    if (loadMoreBtn) {
+      loadMoreBtn.onclick = function(e) {
+        e.preventDefault();
+        
+        const gallery = document.querySelector('.inspiration-gallery');
+        
+        if (gallery) {
+          const allItems = gallery.querySelectorAll('.gallery-item');
+          
+          // Clone the first 11 items
+          for (let i = 0; i < 11; i++) {
+            const originalItem = allItems[i];
+            if (originalItem) {
+              const clonedItem = originalItem.cloneNode(true);
+              const newItemNumber = allItems.length + i + 1;
+              
+              // Update class name
+              clonedItem.className = clonedItem.className.replace(/item-\d+/, `item-${newItemNumber}`);
+              
+              // Update title
+              const title = clonedItem.querySelector('.gallery-title');
+              if (title) {
+                title.textContent = `Inspiration ${newItemNumber}`;
+              }
+              
+              // Make sure the item is visible
+              clonedItem.style.display = 'block';
+              clonedItem.style.visibility = 'visible';
+              clonedItem.style.opacity = '1';
+              
+              // Add to gallery
+              gallery.appendChild(clonedItem);
+            }
+          }
+          
+          // Small delay to ensure DOM has updated
+          setTimeout(() => {
+            // Force a layout refresh
+            gallery.style.display = 'none';
+            gallery.offsetHeight; // Trigger reflow
+            gallery.style.display = 'block';
+            
+            // Re-layout Masonry
+            if (gallery.masonry) {
+              gallery.masonry.reloadItems();
+              gallery.masonry.layout();
+            } else {
+              // If Masonry isn't initialized, try to initialize it
+              if (window.Masonry) {
+                gallery.masonry = new Masonry(gallery, {
+                  itemSelector: '.gallery-item',
+                  columnWidth: '.gallery-item',
+                  percentPosition: true,
+                  gutter: 12,
+                  horizontalOrder: true,
+                  fitWidth: true
+                });
+              }
+            }
+          }, 100);
+        }
+      };
+    }
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLoadMore);
+  } else {
+    initLoadMore();
+  }
+
   // Filter dropdown functionality
   const filterButtons = document.querySelectorAll('[data-dropdown]');
   
