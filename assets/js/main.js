@@ -648,12 +648,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchButton = document.querySelector('.search-container .btn');
   const searchResults = document.getElementById('searchResults');
   const searchQuery = document.querySelector('.search-query');
+  const searchPrefix = document.querySelector('.search-prefix');
+  const searchSuffix = document.querySelector('.search-suffix');
+  const dpOriginalToggle = document.getElementById('dpOriginal');
   
   if (searchInput && searchButton && searchResults && searchQuery) {
     const performSearch = () => {
       const query = searchInput.value.trim();
       if (query) {
-        // Update search query text with quotes
+        // Show normal search format
+        searchPrefix.style.display = 'inline';
+        searchSuffix.style.display = 'inline';
         searchQuery.textContent = `"${query}"`;
         // Show search results section
         searchResults.style.display = 'block';
@@ -679,6 +684,68 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  
+  // DP Originals toggle functionality (separate from search)
+  if (dpOriginalToggle && searchResults && searchQuery && searchPrefix && searchSuffix) {
+    // Track which cards originally had the dp-original-banner class
+    const originallyDPOriginalCards = new Set();
+    
+    // Initialize tracking immediately
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+      if (card.classList.contains('dp-original-banner')) {
+        originallyDPOriginalCards.add(index);
+      }
+    });
+    
+    dpOriginalToggle.addEventListener('change', function() {
+      const videoTourCards = document.querySelectorAll('.video-tour-card');
+      const currentProjectCards = document.querySelectorAll('.project-card');
+      
+      if (this.checked) {
+        // Hide prefix and suffix, show only DP Originals text
+        searchPrefix.style.display = 'none';
+        searchSuffix.style.display = 'none';
+        searchQuery.textContent = 'DP Originals - Designer Templated Project';
+        searchResults.style.display = 'block';
+        
+        // Hide video tour cards
+        videoTourCards.forEach(card => {
+          card.style.display = 'none';
+        });
+        
+        // Add dp-original-banner class to all project cards
+        currentProjectCards.forEach(card => {
+          card.classList.add('dp-original-banner');
+        });
+        
+        // Scroll to search results with offset for fixed navigation
+        const navHeight = 100; // Navigation height + 20px margin
+        const elementPosition = searchResults.offsetTop;
+        const offsetPosition = elementPosition - navHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Hide search results when toggle is off
+        searchResults.style.display = 'none';
+        
+        // Show video tour cards
+        videoTourCards.forEach(card => {
+          card.style.display = 'block';
+        });
+        
+        // Remove dp-original-banner class only from cards that didn't originally have it
+        currentProjectCards.forEach((card, index) => {
+          if (!originallyDPOriginalCards.has(index)) {
+            card.classList.remove('dp-original-banner');
+          }
+        });
+      }
+    });
+  }
 
   // Filter functionality
   const filterSelects = document.querySelectorAll('.filter-select');
@@ -698,12 +765,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Observer to automatically add banner when dp-original-banner class is added
+// Observer to automatically add/remove banner when dp-original-banner class is added/removed
 const observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
       const target = mutation.target;
-      if (target.classList.contains('dp-original-banner') && !target.querySelector('.banner-svg')) {
+      const bannerSvg = target.querySelector('.banner-svg');
+      const bannerText = target.querySelector('.banner-text');
+      
+      if (target.classList.contains('dp-original-banner') && !bannerSvg) {
         // Create banner HTML
         const bannerHTML = `
           <div class="banner-svg">
@@ -718,6 +788,14 @@ const observer = new MutationObserver(function(mutations) {
         
         // Insert banner as first child
         target.insertAdjacentHTML('afterbegin', bannerHTML);
+      } else if (!target.classList.contains('dp-original-banner') && (bannerSvg || bannerText)) {
+        // Remove banner elements when class is removed
+        if (bannerSvg) {
+          bannerSvg.remove();
+        }
+        if (bannerText) {
+          bannerText.remove();
+        }
       }
     }
   });
