@@ -304,15 +304,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Renovation Ideas Page Functionality
-  // Simple image carousel for project images
-  const projectImages = [
-    'assets/images/project/project-1-1.png',
-    'assets/images/project/project-1-2.png',
-    'assets/images/project/project-1-3.png',
-    'assets/images/project/project-1-4.png',
-    'assets/images/project/project-1-5.png',
-    'assets/images/project/project-1-6.png'
-  ];
+  // Image arrays for different projects
+  const projectImageSets = {
+    1: [
+      'assets/images/project-details/compact-chef/compact-chef-1.jpg',
+      'assets/images/project-details/compact-chef/compact-chef-2.jpg',
+      'assets/images/project-details/compact-chef/compact-chef-3.jpg'
+    ],
+    2: [
+      'assets/images/project/project-1-2.png',
+      'assets/images/project/project-1-3.png',
+      'assets/images/project/project-1-4.png',
+      'assets/images/project/project-1-5.png',
+      'assets/images/project/project-1-6.png'
+    ],
+    3: [
+      'assets/images/project/project-1-3.png',
+      'assets/images/project/project-1-4.png',
+      'assets/images/project/project-1-5.png',
+      'assets/images/project/project-1-6.png',
+      'assets/images/project/project-1-2.png'
+    ],
+    4: [
+      'assets/images/project/project-1-4.png',
+      'assets/images/project/project-1-5.png',
+      'assets/images/project/project-1-6.png',
+      'assets/images/project/project-1-2.png',
+      'assets/images/project/project-1-3.png'
+    ],
+    5: [
+      'assets/images/project/project-1-5.png',
+      'assets/images/project/project-1-6.png',
+      'assets/images/project/project-1-2.png',
+      'assets/images/project/project-1-3.png',
+      'assets/images/project/project-1-4.png'
+    ],
+    6: [
+      'assets/images/project/project-1-6.png',
+      'assets/images/project/project-1-2.png',
+      'assets/images/project/project-1-3.png',
+      'assets/images/project/project-1-4.png',
+      'assets/images/project/project-1-5.png'
+    ]
+  };
   
   // Initialize carousel for each project
   function initProjectCarousel(projectNumber) {
@@ -321,7 +355,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.getElementById(`nextBtn${projectNumber}`);
     
     if (projectImage && prevBtn && nextBtn) {
+      const projectImages = projectImageSets[projectNumber] || [];
       let currentImageIndex = 0;
+      
+      // Hide navigation buttons if only one image
+      if (projectImages.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        return;
+      }
       
       // Function to update image
       function updateImage() {
@@ -874,6 +916,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
     });
+
+    // Auto-enable DP Originals when arriving with ?dp=1
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('dp') === '1') {
+      dpOriginalToggle.checked = true;
+      dpOriginalToggle.dispatchEvent(new Event('change'));
+    }
   }
 
   // Filter functionality
