@@ -1357,7 +1357,52 @@ function initializeCustomDropdowns() {
   });
 }
 
+// Review text truncation functionality
+function toggleReviewText(button) {
+  const textElement = button.parentElement;
+  const fullText = textElement.getAttribute('data-full-text');
+  
+  if (button.textContent === 'Read more') {
+    // Show full text
+    textElement.innerHTML = fullText + ' <span class="read-more-btn">Read less</span>';
+    textElement.classList.add('expanded');
+  } else {
+    // Show truncated text
+    const truncatedText = fullText.length > 200 ? fullText.substring(0, 200) + '...' : fullText;
+    textElement.innerHTML = truncatedText + ' <span class="read-more-btn">Read more</span>';
+    textElement.classList.remove('expanded');
+  }
+}
+
+// Initialize review text truncation when DOM is loaded
+function initializeReviewTextTruncation() {
+  const reviewTexts = document.querySelectorAll('.review-text');
+  
+  reviewTexts.forEach(textElement => {
+    const fullText = textElement.getAttribute('data-full-text');
+    if (fullText && fullText.length > 200) {
+      // Truncate text to 200 characters and add read more button inline
+      const truncatedText = fullText.substring(0, 200) + '...';
+      textElement.innerHTML = truncatedText + ' <span class="read-more-btn">Read more</span>';
+    } else {
+      // Keep original text if it's short enough
+      textElement.innerHTML = fullText;
+    }
+  });
+}
+
+// Add event delegation for read more buttons
+function setupReadMoreEventDelegation() {
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('read-more-btn')) {
+      toggleReviewText(e.target);
+    }
+  });
+}
+
 // Initialize custom dropdowns when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   initializeCustomDropdowns();
+  initializeReviewTextTruncation();
+  setupReadMoreEventDelegation();
 });
