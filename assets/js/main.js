@@ -1400,6 +1400,23 @@ function setupReadMoreEventDelegation() {
   });
 }
 
+// Toggle guidance dropdown functionality
+function toggleGuidance(button) {
+  const guidanceSection = button.parentElement;
+  const content = guidanceSection.querySelector('.dp-guidance-content');
+  const arrow = button.querySelector('.dp-guidance-arrow');
+  
+  if (content.style.display === 'none' || content.style.display === '') {
+    content.style.display = 'block';
+    arrow.textContent = '▲';
+    guidanceSection.classList.add('expanded');
+  } else {
+    content.style.display = 'none';
+    arrow.textContent = '▼';
+    guidanceSection.classList.remove('expanded');
+  }
+}
+
 // Initialize custom dropdowns when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   initializeCustomDropdowns();

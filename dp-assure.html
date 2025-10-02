@@ -143,16 +143,19 @@
           
           <div class="dp-trust-grid">
             <div class="dp-trust-card">
+              <img src="assets/icons/dp-assure/transparent.svg" alt="Transparent Standards" class="dp-trust-icon" loading="lazy" decoding="async">
               <h4 class="dp-trust-title">Transparent Standards</h4>
               <p class="dp-trust-text">We show what acceptable workmanship looks like before work starts, so expectations are aligned.</p>
             </div>
             
             <div class="dp-trust-card">
+              <img src="assets/icons/dp-assure/accountability.svg" alt="Accountability Built‑In" class="dp-trust-icon" loading="lazy" decoding="async">
               <h4 class="dp-trust-title">Accountability Built‑In</h4>
               <p class="dp-trust-text">Clear benchmarks let everyone assess progress objectively and resolve issues faster.</p>
             </div>
             
             <div class="dp-trust-card">
+              <img src="assets/icons/dp-assure/defects.svg" alt="Plain‑English Defects" class="dp-trust-icon" loading="lazy" decoding="async">
               <h4 class="dp-trust-title">Plain‑English Defects</h4>
               <p class="dp-trust-text">Common vs uncommon defect examples make it easy to spot what needs attention and what's within tolerance.</p>
             </div>
@@ -162,12 +165,22 @@
         <!-- Trade Benchmarks Section -->
         <div class="dp-benchmarks-section">
           <h3 class="dp-section-title">Trade Benchmarks & Tolerances</h3>
-          <p class="dp-section-subtitle">Book an on‑site review</p>
           
           <!-- Masonry / Tiling -->
           <div class="dp-trade-card">
             <h4 class="dp-trade-title">Masonry / Tiling</h4>
             <p class="dp-trade-description">Wet & dry areas: tiles, screed, grout, falls to trap.</p>
+            
+            <!-- Tiling Images -->
+            <div class="dp-trade-images">
+              <img src="assets/images/dp-assure/image1.png" alt="Tiling Example 1" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image2.png" alt="Tiling Example 2" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image3.png" alt="Tiling Example 3" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image4.png" alt="Tiling Example 4" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image5.png" alt="Tiling Example 5" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image6.png" alt="Tiling Example 6" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image7.jpg" alt="Tiling Example 7" class="dp-trade-image" loading="lazy" decoding="async">
+            </div>
             
             <div class="dp-trade-content">
               <div class="dp-tolerances">
@@ -200,9 +213,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -241,9 +259,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -281,9 +304,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -292,6 +320,10 @@
           <div class="dp-trade-card">
             <h4 class="dp-trade-title">Carpentry & Stone</h4>
             <p class="dp-trade-description">Cabinetry, wardrobes, solid surfaces and worktops.</p>
+            <div class="dp-trade-images">
+              <img src="assets/images/dp-assure/image8.png" alt="Carpentry Example 1" class="dp-trade-image" loading="lazy" decoding="async">
+              <img src="assets/images/dp-assure/image9.png" alt="Carpentry Example 2" class="dp-trade-image" loading="lazy" decoding="async">
+            </div>
             
             <div class="dp-trade-content">
               <div class="dp-tolerances">
@@ -323,9 +355,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -334,6 +371,9 @@
           <div class="dp-trade-card">
             <h4 class="dp-trade-title">Painting & Wall Finishes</h4>
             <p class="dp-trade-description">Coverage, texture uniformity, edges and sheen.</p>
+            <div class="dp-trade-images">
+              <img src="assets/images/dp-assure/image10.png" alt="Painting Example 1" class="dp-trade-image" loading="lazy" decoding="async">
+            </div>
             
             <div class="dp-trade-content">
               <div class="dp-tolerances">
@@ -364,9 +404,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -375,6 +420,9 @@
           <div class="dp-trade-card">
             <h4 class="dp-trade-title">Electrical (Power/Lighting/Data)</h4>
             <p class="dp-trade-description">Positions, safety compliance, finishing and labeling.</p>
+            <div class="dp-trade-images">
+              <img src="assets/images/dp-assure/image11.png" alt="Electrical Example 1" class="dp-trade-image" loading="lazy" decoding="async">
+            </div>
             
             <div class="dp-trade-content">
               <div class="dp-tolerances">
@@ -404,9 +452,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -445,9 +498,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -485,9 +543,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -523,9 +586,14 @@
               </div>
               
               <div class="dp-viewing-guidance">
-                <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
-                <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
-                <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                <button class="dp-guidance-toggle" onclick="toggleGuidance(this)">
+                  <h5 class="dp-guidance-title">Viewing guidance & acceptance criteria</h5>
+                  <span class="dp-guidance-arrow">▼</span>
+                </button>
+                <div class="dp-guidance-content">
+                  <p class="dp-guidance-text">Unless noted in your contract, visual checks are assessed at a normal viewing distance of 1.5–2.0 m under typical daylight.</p>
+                  <p class="dp-guidance-text">Where drawings, supplier datasheets, or statutory requirements set stricter rules, those take precedence over this guidance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -534,13 +602,12 @@
         <!-- Note Section -->
         <div class="dp-note-section">
           <p class="dp-note-text">
-            <strong>Note:</strong> These cues align with Singapore's Building and Construction Authority (BCA) CONQUAS / Quality Mark benchmarks. Always follow your project's specifications, method statements, and applicable codes.
+            <strong>Note:</strong> These cues align with Singapore's Building and Construction Authority (BCA) <a href="https://www1.bca.gov.sg/docs/default-source/docs-corp-buildsg/quality/conquas9.pdf" target="_blank" rel="noopener noreferrer" class="dp-note-link">CONQUAS / Quality Mark benchmarks</a>. Always follow your project's specifications, method statements, and applicable codes.
           </p>
         </div>
 
         <!-- Important Section -->
         <div class="dp-important-section">
-          <h4 class="dp-important-title">Important</h4>
           <p class="dp-important-text">
             All information provided by DP Assure is subject to on‑site inspection and work sequencing requirements. Actual acceptance criteria may vary based on project drawings, material specifications, and applicable Singapore standards.
           </p>
