@@ -6934,6 +6934,305 @@ a.contact-value :hover {
   }
 }
 
+/* Direct Contractor Hero Styles */
+.direct-contractor-hero {
+  background-image: url('../images/direct-contractor/direct-contractor-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.direct-contractor-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(263deg, rgba(0, 0, 0, 0.00) 11.98%, #000 100%);
+  z-index: 1;
+}
+
+.direct-contractor-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.direct-contractor-hero .breadcrumb {
+  color: white;
+}
+
+.direct-contractor-hero .breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.direct-contractor-hero .breadcrumb a:hover {
+  color: var(--clr-gold-600);
+}
+
+.direct-contractor-hero .breadcrumb-separator {
+  color: white;
+  opacity: 0.7;
+}
+
+.direct-contractor-hero .breadcrumb-current {
+  color: white;
+  opacity: 0.7;
+}
+
+.direct-contractor-hero-content {
+  color: white;
+  text-align: left;
+  max-width: 600px;
+}
+
+.direct-contractor-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.direct-contractor-subtitle {
+  font-size: var(--fs-body-1);
+  font-weight: var(--fw-medium);
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.direct-contractor-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.direct-contractor-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.direct-contractor-check {
+  color: var(--clr-gold-400);
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.direct-contractor-feature-text {
+  font-size: var(--fs-body-1);
+  color: white;
+}
+
+/* Direct Contractor Main Content Styles */
+.direct-contractor-main {
+  padding: 3.75rem 0;
+}
+
+.direct-contractor-section-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1.5rem;
+}
+
+.direct-contractor-how-it-works,
+.direct-contractor-why-us,
+.direct-contractor-verify,
+.direct-contractor-faq {
+  margin-bottom: 1.5rem;
+}
+
+.direct-contractor-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.direct-contractor-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--clr-cream-300);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.direct-contractor-step-number {
+  background: var(--clr-gold-600);
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+  flex-shrink: 0;
+}
+
+.direct-contractor-step-content {
+  flex: 1;
+}
+
+.direct-contractor-step-title {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.5rem;
+}
+
+.direct-contractor-step-text {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.direct-contractor-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.direct-contractor-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--clr-cream-300);
+}
+
+.direct-contractor-benefit .direct-contractor-check {
+  color: var(--clr-gold-600);
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.direct-contractor-benefit-text {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.direct-contractor-benefit-label {
+  font-weight: var(--fw-medium);
+}
+
+
+
+.direct-contractor-verify-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.direct-contractor-verify-item {
+  padding: 1.5rem;
+  background: var(--clr-cream-300);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.direct-contractor-verify-icon {
+  height: 5rem;
+  width: auto;
+}
+
+.direct-contractor-verify-text {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+.direct-contractor-verify-note {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  margin-top: 1.5rem;
+}
+
+.direct-contractor-link {
+  color: var(--clr-primary-600);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: color 0.2s ease;
+}
+
+.direct-contractor-link:hover {
+  color: var(--clr-gold-600);
+  text-decoration: none;
+}
+
+.direct-contractor-faq-list {
+  margin-top: 1.5rem;
+}
+
+.direct-contractor-faq-item {
+  padding: 1.5rem;
+  background: var(--clr-cream-300);
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.direct-contractor-faq-question {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-900);
+  margin-bottom: 1rem;
+}
+
+.direct-contractor-faq-answer {
+  font-size: var(--fs-body-1);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+
+/* Responsive Design for Direct Contractor */
+@media (max-width: 768px) {
+
+
+  
+  .direct-contractor-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .direct-contractor-benefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .direct-contractor-verify-list {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+
 /* DP Assure Styles */
 .dp-assure-hero {
   background-image: url('../images/dp-assure/dp-assure-img.jpg');
