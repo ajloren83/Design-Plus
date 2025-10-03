@@ -1107,7 +1107,7 @@ p {
 }
 
 .read-more-btn:hover {
-  color: var(--clr-primary-700);
+  color: var(--clr-gold-600);
   text-decoration: none;
 }
 
